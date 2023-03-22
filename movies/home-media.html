@@ -1,0 +1,271 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie " lang="en" itemscope itemtype="http://schema.org/Product"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie " lang="en" itemscope itemtype="http://schema.org/Product"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie " lang="en" itemscope itemtype="http://schema.org/Product"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js " lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"2e8840a7e2",applicationID:"50272084"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- START ONE TRUST -->
+		<!-- OneTrust Prod Script -->
+	<script src="https://cdn.cookielaw.org/consent/b503ebc0-93e7-4eb9-b60f-5394045361c1/OtAutoBlock.js" type="text/javascript"></script>
+	<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="b503ebc0-93e7-4eb9-b60f-5394045361c1"></script>
+		<script src="https://production-cmp.isgprivacy.cbsi.com/dist/optanon-v1.1.0.js" async></script>
+	<script type="text/javascript">!function(n){var o=window,a="cbsoptanon",c="cmd",d="config";o[a]=o[a]?o[a]:{},o[a][c]=o[a][c]?o[a][c]:[],o[a][d]=o[a][d]?o[a][d]:[],["onIframesReady","onFormsReady","onScriptsReady","onAdsReady"].forEach(function(n){o[a][n]=o[a][n]||function(){var d=arguments;o[a][c].push(function(){o[a][n].apply(o[a],d)})}})}();</script>
+	<!-- END ONE TRUST -->
+<base href="https://www.paramount.com/" /><meta http-equiv="Expires" content="Wed, 17 Mar 2021 13:49:46 GMT" /><title></title><meta name="description" content="" /><meta name="keywords" content="" /><link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"><meta property="og:title" content="" /><meta property="og:site_name" content="" /><meta property="og:description" content="" /><meta property="og:image" content="https://www.paramount.com/assets/img/og-meta.png" /><meta itemprop="name" content="" /><meta itemprop="description" content="" /><meta itemprop="image" content="https://www.paramount.com/assets/img/og-meta.png" /><meta name="twitter:card" content="summary"><meta name="twitter:title" content="" /><meta name="twitter:description" content="" /><meta name="twitter:image" content="https://www.paramount.com/assets/img/og-meta.png" /> <link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#213049"><link rel="stylesheet" href="css/main.css?v=26.3"><link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,600i,700|Open+Sans|Open+Sans+Condensed:300|Oswald:200,300,400|Playfair+Display:400,400i" rel="stylesheet"><script type="text/javascript">
+var GlobalsObj =  {};
+GlobalsObj.GOOGLE_ANALYTICS_ID = "UA-31835-14";
+GlobalsObj.FLOODLIGHT_SRC = "";
+GlobalsObj.FB_APP_ID = 'FB_APP_ID';
+GlobalsObj.ROOT_LOCATION = 'https://www.paramount.com/';
+GlobalsObj.DYNAMIC_ASSETS_URL = 'https://paramount-live-public-website-assets.s3.amazonaws.com/assets/uploads/';
+GlobalsObj.STATIC_ASSETS_URL = 'https://www.paramount.com/assets/';
+GlobalsObj.PUBLIC_SALT = 'bsf48adsf91wW';
+GlobalsObj.ROOT_PATH = '/';
+</script>
+<!--[if lt IE 9]>
+<script src="js/respond-1.4.2.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lte IE 9]>
+<script src="js/history-4.2.7.min.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">window.require={waitSeconds:0};</script>
+<script data-main="js/script.min.js?v=22.3" src="js/modernizr-3.3.1-require.min.js"></script></head>
+<body class="desktop">
+<div id="container">
+	<header id="main-header" class="blue-grad clearfix">
+		<div id="header-content-wrap">
+	<div id="toggle-btn"><div class="burger"></div></div>
+	<h1 class="clearfix">
+		<a id="logo" class="ga-track" data-ga-event="nav, click, header logo" href="/">
+			<span>Paramount Pictures</span>
+		</a>
+	</h1>
+	<div id="main-header-content">
+		<nav id="main-nav" role="navigation">
+			<div id="nav-wrap">
+				<ul id="main-menu" class="clearfix">
+							<li>
+									<a href="movies" class="btn nav-btn ga-track" data-ga-event="nav, click, MOVIES">MOVIES</a>
+							</li>
+								<li class="divider"></li>
+							<li>
+									<a href="television" class="btn nav-btn ga-track" data-ga-event="nav, click, TELEVISION">TELEVISION</a>
+							</li>
+								<li class="divider"></li>
+							<li>
+									<a href="http://www.paramountanimation.com" class="btn nav-btn ga-track" data-ga-event="nav, click, ANIMATION" target='_blank'>ANIMATION</a>
+							</li>
+								<li class="divider"></li>
+							<li>
+									<a href="careers" class="btn nav-btn ga-track" data-ga-event="nav, click, CAREERS">CAREERS</a>
+							</li>
+								<li class="divider"></li>
+							<li>
+									<a href="http://www.paramountstudiotour.com/" class="btn nav-btn ga-track" data-ga-event="nav, click, STUDIO TOURS" target='_blank'>STUDIO TOURS</a>
+							</li>
+				</ul>
+				<ul id="social-menu" class="social-menu clearfix">
+							<li class="social-bug ig">
+								<a href="https://www.instagram.com/paramountpics/" target="_blank" rel="noopener noreferrer" class="ga-track icon-instagram" data-ga-social="social nav, click, ig"></a>
+							</li>
+							<li class="social-bug tw">
+								<a href="https://twitter.com/ParamountPics" target="_blank" rel="noopener noreferrer" class="ga-track icon-twitter" data-ga-social="social nav, click, tw"></a>
+							</li>
+							<li class="social-bug fb">
+								<a href="https://fb.com/Paramount" target="_blank" rel="noopener noreferrer" class="ga-track icon-facebook-squared" data-ga-social="social nav, click, fb"></a>
+							</li>
+							<li class="social-bug yt">
+								<a href="https://www.youtube.com/user/Paramount" target="_blank" rel="noopener noreferrer" class="ga-track icon-youtube-play" data-ga-social="social nav, click, yt"></a>
+							</li>
+							<li class="social-bug li">
+								<a href="https://www.linkedin.com/company/paramount-pictures" target="_blank" rel="noopener noreferrer" class="ga-track icon-linkedin-squared" data-ga-social="social nav, click, li"></a>
+							</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div id="expand-cover"></div>
+</div>	</header>
+		<main id="main">
+		<div id="container-main">
+
+
+			<section id="page-header" class="module-wrap clearfix">
+					<div class="header-item">
+						<div class="module header-module clearfix">
+							<div class="header-img " style="background-image:url(https://paramount-live-public-website-assets.s3.amazonaws.com/assets/uploads/s1/hdr/fpo-header-404_g1a2eat5wp.jpg);"></div>
+							<div class="title"><p>Looks like you <em>were</em> going the wrong way</p></div>
+						</div>
+					</div>
+								</section>
+
+			<div id="nav-marker"></div>
+
+
+
+		
+		
+
+		
+
+
+
+
+		
+		
+		
+		
+
+
+
+
+		
+		
+
+		
+
+
+
+
+			<section id="module-131" class="content-section content-block clearfix">
+				<article class="module-wrap clearfix">
+					<div class="module">
+						<div class="title">The requested page could not be found.</div>
+					</div>
+				</article>
+			</section>
+		
+		
+		
+		
+
+
+
+
+		
+		
+
+		
+
+
+
+
+		
+		
+		
+		
+
+
+
+
+		
+		
+
+		
+
+
+
+
+		
+		
+		
+		
+
+
+
+
+</div>
+	</main>
+</div>
+<footer id="main-footer">
+	<ul id="footer-links" class="clearfix">
+		<li>
+			<a class="text-underline-btn ga-track" href="theatrical-library" data-ga-event="Footer Links, click, PARAMOUNT PICTURES LIBRARY">PARAMOUNT PICTURES LIBRARY</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="https://www.paramountmovies.com/legal/privacypolicy.php" data-ga-event="Footer Links, click, PRIVACY POLICY">PRIVACY POLICY</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="https://www.paramountmovies.com/legal/termsofuse.php" data-ga-event="Footer Links, click, TERMS OF USE">TERMS OF USE</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="https://viacomprivacy.com" data-ga-event="Footer Links, click, DO NOT SELL MY PERSONAL INFORMATION">DO NOT SELL MY PERSONAL INFORMATION</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="international" data-ga-event="Footer Links, click, INTERNATIONAL">INTERNATIONAL</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="studio-services" data-ga-event="Footer Links, click, STUDIO SERVICES">STUDIO SERVICES</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="giving-back" data-ga-event="Footer Links, click, GIVING BACK">GIVING BACK</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="business-conduct" data-ga-event="Footer Links, click, BUSINESS CONDUCT">BUSINESS CONDUCT</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="smoking-and-tobacco-depiction-policy" data-ga-event="Footer Links, click, SMOKING & TOBACCO DEPICTION POLICY">SMOKING & TOBACCO DEPICTION POLICY</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="criticallens" data-ga-event="Footer Links, click, ANTI-BIAS STATEMENT">ANTI-BIAS STATEMENT</a>
+		</li>
+		<li>
+			<a class="text-underline-btn ga-track" href="faqs" data-ga-event="Footer Links, click, FAQS">FAQS</a>
+		</li>
+</ul>
+<div id="footer-bug">Paramount</div>
+<div id="copyright">&copy;2021 Paramount Pictures</div></footer>
+<div id="video-modal-wrap" class="modal-wrap">
+	<div id="video-modal-overlay">
+		<div id="video-content-wrap">
+			<div id="video-bg">
+				<div id="modal-player" class="player"></div>
+			</div>
+		</div>
+		<button class="close-btn"><span class="icon">Close Video</span></button>
+	</div>
+</div>
+<div id="modal-manager-wrap" class="modal-wrap ">
+	<div id="modal-manager-overlay"  class="modal-overlay">
+		<div id="modal-content-wrap" class="modal-content-wrap">
+			<div id="modal-content" class="modal-content">
+							</div>
+			<button class="close-btn"><span class="icon">Close</span></button>
+		</div>
+	</div>
+</div>
+<div id="message-modal-wrap" class="modal-wrap">
+	<div id="message-modal-overlay" class="modal-overlay">
+		<div id="message-modal-content-wrap" class="modal-content-wrap">
+			<div id="modal-info" class="modal-content"></div>
+		</div>
+	</div>
+</div>
+<div id="promo"></div>
+<script type="text/javascript">	GlobalsObj.CMS_JSON = {"fresh":0,"site":{"id":1,"name":"Paramount USA","state":"normal","state_msg":"<p>Site is temporarily unavailable.<\/p>","language":"en","url":"https:\/\/paramount.com","tout":{"id":4,"title":"WE’RE HERE FOR YOU","subtitle":"<p>For more than a hundred years, Paramount has been the gold standard for storytelling and movie-making, and we will always believe in the communal experience of watching movies. Although we know that for the near future we cannot be together, we can still enjoy great films and talk about them with our friends and families.&nbsp;In good times and bad, storytelling unites us all and we at Paramount have put together a list of films from our library that we believe any film lover must see.<\/p>","cta":"CLICK HERE TO VIEW","link":"https:\/\/www.paramount.com\/our-favorites","img":"s1\/tout\/logo_gd6ype2dzh.png"},"tout_cookie":0,"header_links":[{"id":5,"type":"","link":"movies","cta":"MOVIES","network":""},{"id":7,"type":"","link":"television","cta":"TELEVISION","network":""},{"id":4869,"type":"external","link":"http:\/\/www.paramountanimation.com","cta":"ANIMATION","network":""},{"id":6,"type":"","link":"careers","cta":"CAREERS","network":""},{"id":4801,"type":"external","link":"http:\/\/www.paramountstudiotour.com\/","cta":"STUDIO TOURS","network":""},{"id":9,"type":"","link":"https:\/\/www.instagram.com\/paramountpics\/","cta":"","network":"ig"},{"id":10,"type":"","link":"https:\/\/twitter.com\/ParamountPics","cta":"","network":"tw"},{"id":11,"type":"","link":"https:\/\/fb.com\/Paramount","cta":"","network":"fb"},{"id":12,"type":"","link":"https:\/\/www.youtube.com\/user\/Paramount","cta":"","network":"yt"},{"id":13,"type":"","link":"https:\/\/www.linkedin.com\/company\/paramount-pictures","cta":"","network":"li"}],"footer_links":[{"id":4815,"type":"external","link":"theatrical-library","cta":"PARAMOUNT PICTURES LIBRARY","network":""},{"id":4813,"type":"external","link":"https:\/\/www.paramountmovies.com\/legal\/privacypolicy.php","cta":"PRIVACY POLICY","network":""},{"id":4814,"type":"external","link":"https:\/\/www.paramountmovies.com\/legal\/termsofuse.php","cta":"TERMS OF USE","network":""},{"id":4870,"type":"external","link":"https:\/\/viacomprivacy.com","cta":"DO NOT SELL MY PERSONAL INFORMATION","network":""},{"id":15,"type":"","link":"international","cta":"INTERNATIONAL","network":""},{"id":23,"type":"","link":"studio-services","cta":"STUDIO SERVICES","network":""},{"id":20,"type":"","link":"giving-back","cta":"GIVING BACK","network":""},{"id":21,"type":"","link":"business-conduct","cta":"BUSINESS CONDUCT","network":""},{"id":8,"type":"","link":"smoking-and-tobacco-depiction-policy","cta":"SMOKING & TOBACCO DEPICTION POLICY","network":""},{"id":4868,"type":"","link":"criticallens","cta":"ANTI-BIAS STATEMENT","network":""},{"id":22,"type":"","link":"faqs","cta":"FAQS","network":""}],"social_links":[{"id":4835,"type":"subhead","link":"","cta":"PARAMOUNTPICS","network":""},{"id":4836,"type":"external","link":"https:\/\/www.instagram.com\/paramountpics\/","cta":"","network":"ig"},{"id":4837,"type":"external","link":"https:\/\/www.linkedin.com\/company\/paramount-pictures\/","cta":"","network":"li"},{"id":4862,"type":"subhead","link":"","cta":"PARAMOUNTTVS","network":""},{"id":4863,"type":"external","link":"https:\/\/www.instagram.com\/paramounttelevisionstudios\/","cta":"","network":"ig"},{"id":4864,"type":"external","link":"https:\/\/twitter.com\/ParamountTVS","cta":"","network":"tw"},{"id":4865,"type":"external","link":"https:\/\/www.facebook.com\/ParamountTelevisionStudios\/","cta":"","network":"fb"},{"id":4866,"type":"external","link":"https:\/\/www.linkedin.com\/company\/paramounttelevisionstudios\/","cta":"","network":"li"},{"id":4838,"type":"subhead","link":"","cta":"PARAMOUNTCAREERS","network":""},{"id":4840,"type":"external","link":"https:\/\/www.instagram.com\/paramountcareers\/","cta":"","network":"ig"},{"id":4841,"type":"external","link":"https:\/\/www.facebook.com\/ParamountCareers\/","cta":"","network":"fb"},{"id":4839,"type":"external","link":"https:\/\/twitter.com\/ParamountJobs","cta":"","network":"tw"},{"id":4842,"type":"subhead","link":"","cta":"PARAMOUNTCAMPUS","network":""},{"id":4843,"type":"external","link":"https:\/\/www.instagram.com\/paramountinterns\/","cta":"","network":"ig"},{"id":4844,"type":"external","link":"https:\/\/www.facebook.com\/paramountinterns\/","cta":"","network":"fb"}]},"page":{"id":1725,"parent_id":0,"route":"404","join_type":"404","join_id":0,"title":"404 Page","redirect":null,"meta_title":"","meta_desc":"","meta_keywords":"","is_modal":0,"modules":[{"id":82,"code":"header","category":93,"items":[{"id":13,"title":"<p>Looks like you <em>were<\/em> going the wrong way<\/p>","quote":"","author":"","source":"","stars":0,"img":"s1\/hdr\/fpo-header-404_g1a2eat5wp.jpg"}]},{"id":131,"code":"content-block","category":0,"content":"The requested page could not be found.","items":[]},{"id":130,"code":"button","category":0,"cta":"CONTINUE","items":[]},{"id":84,"code":"footer","category":0,"items":[]}],"content":{}}};</script>
+<!--[if lt IE 9]><script type="text/javascript">var container=document.getElementById("container"),outdated=document.createElement("div");outdated.id='outdated';outdated.className='active';outdated.innerHTML='<a href="http://outdatedbrowser.com/" target="_blank">Your browser is outdated! Get a better browser <span>here<span>.</span></span></a>';container.insertBefore(outdated,container.firstChild);</script><![endif]-->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31835-14', 'auto');
+	ga('send', 'pageview');
+
+	(function(document,EventTarget){var elementProto=window.Element.prototype,matchesFn=elementProto.matches;if (!matchesFn){['webkit','ms','moz'].some(function(prefix){var prefixedFn=prefix+'MatchesSelector';if(elementProto.hasOwnProperty(prefixedFn)){matchesFn=elementProto[prefixedFn];return true;}});}function passedThrough(event,selector,stopAt){var currentNode=event.target;while(currentNode){if(matchesFn.call(currentNode,selector)){return currentNode;}else if(currentNode!=stopAt&&currentNode!=document.body){currentNode=currentNode.parentNode;}else{return false;}}}EventTarget.prototype.delegateEventListener=function(eName,toFind,fn){this.addEventListener(eName,function(event){var found=passedThrough(event,toFind,event.currentTarget);if(found){fn.call(null,found,event);}});};}(window.document,window.EventTarget||window.Element));
+	function trackEvent(){var args=Array.prototype.slice.call(arguments);if(window.ga){window.ga.apply(null,["send"].concat(args))}}
+	function trackPageView(){var args=Array.prototype.slice.call(arguments),tStr="/"+args.join('/');window.ga('send','pageview',tStr);}
+	function handleBodyClick(target, e){if (target.dataset["gaEvent"]){tAr=target.dataset["gaEvent"].split(", ");tAr.unshift("event");trackEvent.apply(null,tAr);}else if(target.dataset["gaSocial"]){tAr=target.dataset["gaSocial"].split(", ");tAr.unshift("social");trackEvent.apply(null,tAr);}if(e.target.nodeName==="a"||e.target.nodeName==="button"){e.target.blur();}}
+	document.body.delegateEventListener('click', '.ga-track', handleBodyClick);
+</script>
+<!-- One Trust Production -->
+<script src="https://production-cmp.isgprivacy.cbsi.com/dist/optanon-v1.1.0.js" async></script>
+<script type="text/javascript">
+!function(n){var o=window,a="cbsoptanon",c="cmd",d="config";o[a]=o[a]?o[a]:{},o[a][c]=o[a][c]? o[a][c]:[],o[a][d]=o[a][d]?o[a][d]:[],["onIframesReady","onFormsReady","onScriptsReady","onAdsReady"].forEach(function(n){o[a][n]=o[a][n]||function(){var d=arguments;o[a][c].push(function(){o[a][n].apply(o[a],d)})}})}();
+</script>
+<!-- PAGEOK -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2e8840a7e2","applicationID":"50272084","transactionName":"MVNaZEpVVkJXUUdbCQgZbUJRG1FfUldLHBYORg==","queueTime":0,"applicationTime":617,"atts":"HRRZEgJPRUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
