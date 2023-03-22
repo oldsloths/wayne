@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+	<head>
+		<title>Default page</title>
+
+		<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-language" content="fr" />
+
+		<meta name="keywords" content="mots clefs" />
+		<meta name="description" content="description des pages" />
+		<meta name="author" content="Audaxis" />
+		<meta name="owner" content="Audaxis" />
+		<meta name="published" content="date" />
+		<meta name="Robots" content="All, index, follow" />
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<link href="stylesheets/page.css" rel="stylesheet" type="text/css" media="screen, projection" />
+	</head>
+	<body>
+		<div id="cadre">
+			<div id="logo">
+				<img src="images/logo.png" alt="" />			</div>
+			<p id="message">
+				Site en cours de maintenance...<br />
+			</p>
+			<div id="coordonnees">
+				<a href="http://www.audaxis.com"><img src="images/groupe_audaxis.gif" width="200" alt="Audaxis, l'esprit libre" /></a>
+				<div id="infos">
+					Audaxis - L'esprit Libre
+					<br /><br />
+					14, rue du Sec Arembault<br />
+					59002 Lille Cedex<br />
+					<noscript>
+						www.audaxis.com
+					</noscript>
+					<a href="#" rel="info/audaxis.com" class="email"></a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('a.email').each(function(){
+					e=this.rel.replace('/','@');
+					this.href='mailto:'+e;
+					$(this).text(e);
+				});
+			});
+		</script>
+	</body>
+</html>

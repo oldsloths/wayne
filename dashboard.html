@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-ea8907107943d56cb94",applicationID:"427899967"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="https://www.modernamericanpoetry.org/sites/all/themes/maps_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <title>Modern American Poetry</title>
+  <link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css__LeQxW73LSYscb1O__H6f-j_jdAzhZBaesGL19KEB6U.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css_vZ_wrMQ9Og-YPPxa1q4us3N7DsZMJa-14jShHgRoRNo.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css_NSvmNjr2LGjIN7V9H7iiYXVKqyd4Vi99L8n4br6lwKw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css_Jd44-Laeu1KIkNejHv9RUZ-mt81l41MkU1HwkfD4dDA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.modernamericanpoetry.org/sites/default/files/css/css_XkcN69xw2xGJ1V2rQdktVDlW3Cwb01OVXzVW1iQOIeE.css" media="all" />
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_V1ZuwJK9uzfm6fFffOcHHubfxnimoxnbgG58pvTQdpY.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_9rIq9_8mkD_55i7-jdVV9yURHsW9srmxf91-RQMz6M0.js"></script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_Qx_IibFz2AU3jQOhmrKJbGwvwwOH3PfNNxoJwbg9gVo.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/all/modules/lightbox2/js/lightbox.js?1615989250"></script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_I3UeadCTD3-pqt1_I_QuxPqAg5ip54B45tOHbjPADEw.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="/sites/all/modules/timelinemap/js/lib/mxn/mxn.js?(googlev3)"></script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_442yBYj2kn6CRxFnGEW_209es-DZ4PFZlr_1J3Beyow.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-89129990-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_da_PNhzYGjrzocP8P3jZKlfg4IoR71DnjWWTppyzVu4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"maps_theme","theme_token":"iGG0ib5XpjIhk-I6kPP8FzU86g0o6Zn2n7-YezRnH_Q","jquery_version":"1.7","js":{"sites\/all\/modules\/timelinemap\/js\/timemap.js":1,"sites\/all\/modules\/timelinemap\/js\/timelinemap.js":1,"\/\/code.jquery.com\/jquery-1.7.2.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/code.jquery.com\/ui\/1.10.2\/jquery-ui.min.js":1,"1":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/all\/modules\/waypoints\/waypoints.min.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/modal_forms\/js\/modal_forms_login.js":1,"sites\/all\/modules\/modal_forms\/js\/modal_forms_register.js":1,"sites\/all\/modules\/modal_forms\/js\/modal_forms_password.js":1,"https:\/\/www.google.com\/jsapi":1,"sites\/all\/modules\/lightbox2\/js\/lightbox.js":1,"misc\/progress.js":1,"sites\/all\/modules\/ctools\/js\/modal.js":1,"sites\/all\/modules\/modal_forms\/js\/modal_forms_popup.js":1,"http:\/\/maps.google.com\/maps\/api\/js?sensor=false":1,"\/sites\/all\/modules\/timelinemap\/js\/lib\/mxn\/mxn.js?(googlev3)":1,"sites\/all\/modules\/timelinemap\/js\/lib\/timeline-2.3.0.js":1,"sites\/all\/modules\/views_slideshow_ddblock\/js\/formoptions.js":1,"sites\/all\/modules\/maps\/js\/maps.js":1,"sites\/all\/modules\/heartbeat\/modules\/heartbeat_comments\/heartbeat_comments.js":1,"sites\/all\/modules\/heartbeat\/js\/autoresize.jquery.js":1,"sites\/all\/libraries\/jquery.cycle\/jquery.cycle.all.js":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/autocomplete.js":1,"sites\/all\/modules\/better_exposed_filters\/better_exposed_filters.js":1,"sites\/all\/modules\/captcha\/captcha.js":1,"sites\/all\/modules\/views_load_more\/views_load_more.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/modules\/ctools\/js\/collapsible-div.js":1,"2":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/footnotes\/footnotes.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/video_filter\/video_filter.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/wysiwyg_ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/lightbox2\/css\/lightbox.css":1,"sites\/all\/modules\/ctools\/css\/modal.css":1,"sites\/all\/modules\/modal_forms\/css\/modal_forms_popup.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/rate\/rate.css":1,"sites\/all\/modules\/timelinemap\/css\/timeline-2.3.0.css":1,"sites\/all\/modules\/timelinemap\/css\/timelinemap.css":1,"sites\/all\/modules\/biblio\/biblio.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/twocol_stacked\/twocol_stacked.css":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/views_slideshow_cycle.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"sites\/all\/modules\/tagadelic\/tagadelic.css":1,"sites\/all\/modules\/ctools\/css\/collapsible-div.css":1,"public:\/\/ctools\/css\/f35ea5eeafaeb5f1e9d8decfb6a5c6c4.css":1,"sites\/all\/modules\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"public:\/\/ctools\/css\/91bda158d1587473c29f870e0d610fe9.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/style\/white.css":1,"sites\/all\/themes\/maps_theme\/css\/style.css":1,"sites\/all\/themes\/maps_theme\/css\/structure.css":1}},"ckeditor":{"modulePath":"sites\/all\/modules\/wysiwyg_ckeditor"},"heartbeat_language":"en","heartbeat_poll_url":"https:\/\/www.modernamericanpoetry.org\/heartbeat\/js\/poll","lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)public:\/","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":true,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":false,"disable_resize":false,"disable_zoom":false,"force_show_nav":false,"show_caption":true,"loop_items":false,"node_link_text":"View Image Details","node_link_target":false,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":true,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":false},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.modernamericanpoetry.org\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.modernamericanpoetry.org\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"modal-popup-small":{"modalSize":{"type":"fixed","width":400,"height":270},"modalOptions":{"opacity":0.78,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.modernamericanpoetry.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-medium":{"modalSize":{"type":"fixed","width":550,"height":450},"modalOptions":{"opacity":0.78,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.modernamericanpoetry.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"modal-popup-large":{"modalSize":{"type":"scale","width":0.8,"height":0.8},"modalOptions":{"opacity":0.78,"background":"#000"},"animation":"fadeIn","modalTheme":"ModalFormsPopup","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.modernamericanpoetry.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E","closeText":"Close"},"timelinemap_path":"sites\/all\/modules\/timelinemap","heartbeat_comment_post_url":"https:\/\/www.modernamericanpoetry.org\/heartbeat\/comment\/post","heartbeat_comment_load_url":"https:\/\/www.modernamericanpoetry.org\/heartbeat\/comments\/load\/js","better_exposed_filters":{"views":{"landing_activity_snapshot":{"displays":{"default":{"filters":[]}}},"landing_slideshow":{"displays":{"default":{"filters":[]}}},"poet_list":{"displays":{"block":{"filters":[]}}},"landing_recent_content":{"displays":{"default":{"filters":[]}}},"keyword_tag_cloud_":{"displays":{"default":{"filters":[]}}},"footer_image_snapshot":{"displays":{"block":{"filters":[]}}}},"datepicker":false,"slider":false,"settings":[]},"viewsSlideshow":{"landing_slideshow-default":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_landing_slideshow-default":{"num_divs":4,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"landing_slideshow-default","effect":"fade","transition_advanced":0,"timeout":5000,"speed":700,"delay":0,"sync":1,"random":0,"pause":1,"pause_on_click":0,"action_advanced":0,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":3000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{}"}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:dbde8a6d257f80cbb94d9f3f69ba8c1e":{"view_name":"poet_list","view_display_id":"block","view_args":"","view_path":"dashboard","view_base_path":null,"view_dom_id":"dbde8a6d257f80cbb94d9f3f69ba8c1e","pager_element":0},"views_dom_id:0276b1ea6e0f879f910d415e6ee1a68e":{"view_name":"landing_recent_content","view_display_id":"default","view_args":"","view_path":"dashboard","view_base_path":null,"view_dom_id":"0276b1ea6e0f879f910d415e6ee1a68e","pager_element":0}}},"ajax":{"edit-type":{"callback":"maps_smart_search_ajax_form_callback","wrapper":"smart-search-wrapper","method":"replaceWith","effect":"fade","progress":{"type":"none"},"event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"type"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/dashboard":true,"\/":true,"\/dashboard?destination=dashboard":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"superfish":{"1":{"id":"1","sf":{"pathLevels":"5","animation":{"opacity":"show","height":"show"},"speed":300,"autoArrows":true,"dropShadows":true,"disableHI":false},"plugins":{"smallscreen":{"mode":"window_width","addSelected":false,"menuClasses":false,"hyperlinkClasses":false,"title":"Main menu"},"supposition":true,"bgiframe":false,"supersubs":{"minWidth":"12","maxWidth":"27","extraWidth":1}}}}});
+//--><!]]>
+</script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+</head>
+
+<body class="html not-front not-logged-in no-sidebars page-dashboard" >
+    <div id="container" class="clearfix">
+<div id="top-container">
+<div id="top">
+<div class="region region-top">
+  <div id="block-block-9" class="block block-block">
+
+    
+  <div class="content">
+    <div style="float: left; width: 64%; padding-left: 5px; color: #737373;">
+You are currently not logged in.
+
+
+</div>
+
+<!-- js error logging in here. Commented out for now.
+<div style="float: right; text-align: right; width: 35%;">
+<a class="toolbar-button" href="/user/register">Register</a>
+<a class="ctools-use-modal ctools-modal-modal-popup-small toolbar-button" href="/modal_forms/nojs/login">Login</a>
+--!>
+</div>
+
+  </div>
+</div>
+<div id="block-superfish-1" class="block block-superfish">
+
+    
+  <div class="content">
+    <ul id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-white sf-total-items-6 sf-parent-items-5 sf-single-items-1"><li id="menu-218-1" class="active-trail first odd sf-item-1 sf-depth-1 sf-no-children"><a href="/dashboard" class="sf-depth-1 active">Dashboard</a></li><li id="menu-1412-1" class="middle even sf-item-2 sf-depth-1 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/poetry/poets" class="sf-depth-1 menuparent">Poetry</a><ul><li id="menu-1460-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/poetry/schools-poetry" class="sf-depth-2">Schools of Poetry</a></li><li id="menu-670-1" class="last even sf-item-2 sf-depth-2 sf-no-children"><a href="/poetry/poems" class="sf-depth-2">Poems</a></li></ul></li><li id="menu-1422-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent"><a href="/timeline" class="sf-depth-1 menuparent">History</a><ul><li id="menu-1860-1" class="firstandlast odd sf-item-1 sf-depth-2 sf-no-children"><a href="/timeline" class="sf-depth-2">Timeline</a></li></ul></li><li id="menu-1413-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent"><a href="/media" class="sf-depth-1 menuparent">Media</a><ul><li id="menu-1416-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/media/video" class="sf-depth-2">Video</a></li><li id="menu-1417-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="/media/images" class="sf-depth-2">Images</a></li><li id="menu-1415-1" class="last odd sf-item-3 sf-depth-2 sf-no-children"><a href="/media/audio" class="sf-depth-2">Audio</a></li></ul></li><li id="menu-1418-1" class="middle odd sf-item-5 sf-depth-1 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/education" class="sf-depth-1 menuparent">Education</a><ul><li id="menu-1421-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/education/teaching" class="sf-depth-2">Teaching Resources</a></li><li id="menu-8791-1" class="last even sf-item-2 sf-depth-2 sf-no-children"><a href="/education/student_guide" class="sf-depth-2">Student&#039;s Guide to MAPS</a></li></ul></li><li id="menu-420-1" class="last even sf-item-6 sf-depth-1 sf-total-children-2 sf-parent-children-0 sf-single-children-2 menuparent"><a href="/about" class="sf-depth-1 menuparent">About</a><ul><li id="menu-1249-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="/about" class="sf-depth-2">About Us</a></li><li id="menu-904-1" class="last even sf-item-2 sf-depth-2 sf-no-children"><a href="/about/faq" class="sf-depth-2">FAQ</a></li></ul></li></ul>  </div>
+</div>
+<div id="block-block-1" class="block block-block">
+
+    
+  <div class="content">
+    <a href="/"><img src="/sites/all/themes/maps_theme/images/logo_dark.png" width="221" height="25" title="Modern American Poetry" border="0"></a>
+  </div>
+</div>
+</div>
+ <!-- /.region -->
+</div>
+</div>
+<div id="main-content-container">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+          <a href="#navigation" class="element-invisible element-focusable">Skip to navigation</a>
+      </div>
+
+  <section id="main" role="main" class="clearfix">
+        <a id="main-content"></a>
+                	                <div class="region region-content">
+  <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="panel-flexible panels-flexible-home clearfix" >
+<div class="panel-flexible-inside panels-flexible-home-inside">
+<div class="panels-flexible-row panels-flexible-row-home-1 panels-flexible-row-first clearfix ">
+  <div class="inside panels-flexible-row-inside panels-flexible-row-home-1-inside panels-flexible-row-inside-first clearfix">
+<div class="panels-flexible-region panels-flexible-region-home-top_left panels-flexible-region-first ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-top_left-inside panels-flexible-region-inside-first">
+<div class="panel-pane pane-panels-mini pane-home-topleft"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-2col-stacked clearfix panel-display" id="mini-panel-home_topleft">
+      <div class="panel-col-top panel-panel">
+      <div class="inside"><div class="panel-pane pane-page-logo"  >
+  
+      
+  
+  <div class="pane-content">
+    <a href="/" rel="home" id="logo" title="Home"><img src="https://www.modernamericanpoetry.org/sites/default/files/MAPS_Logo3.fw_.png" alt="Home" /></a>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1"  >
+  
+      
+  
+  <div class="pane-content">
+    <p>Note: this site is a work in progress and may not have all of the content you are looking for. A legacy version of the site is available at maps-legacy.org.</p>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-views pane-landing-slideshow darkbg"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-landing-slideshow view-id-landing_slideshow view-display-id-default view-dom-id-f72bdad853b5f136499f17970a2274a0">
+        
+  
+  
+      <div class="view-content">
+      
+  <div class="skin-default">
+    
+    <div id="views_slideshow_cycle_main_landing_slideshow-default" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_landing_slideshow-default" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_landing_slideshow-default_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd views-row-first">
+    
+  <div class="views-field views-field-field-slideshow-images">        <div class="field-content"><a href="https://www.modernamericanpoetry.org/poet/langston-hughes"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/slider_full/public/slideshow/langston_hughes_020111-thumb-640xauto-2149.jpg?itok=-a0GSxAL" width="640" height="320" title="Photograph of Langston Hughes" /></a></div>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_landing_slideshow-default_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-1 views-row-even">
+    
+  <div class="views-field views-field-field-slideshow-images">        <div class="field-content"><a href="https://www.modernamericanpoetry.org/poet/sylvia-plath"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/slider_full/public/slideshow/Sylvia%20Plath.jpg?itok=dCNyCywx" width="640" height="320" title="Photograph of Sylvia Plath" /></a></div>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_landing_slideshow-default_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-2 views-row-odd">
+    
+  <div class="views-field views-field-field-slideshow-images">        <div class="field-content"><a href="https://www.modernamericanpoetry.org/poet/robert-frost"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/slider_full/public/slideshow/camp.jpg?itok=eoNIPFxG" width="640" height="320" alt="Robert Frost at  Camp Cavendish (1957)" title="Robert Frost at  Camp Cavendish (1957)" /></a></div>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_landing_slideshow-default_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-3 views-row-even views-row-last">
+    
+  <div class="views-field views-field-field-slideshow-images">        <div class="field-content"><a href="https://www.modernamericanpoetry.org/poet/ezra-pound"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/slider_full/public/slideshow/EzraPound.jpg?itok=SAlUeL2E" width="640" height="320" title="Photograph of Ezra Pound" /></a></div>  </div></div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-views pane-poet-list poet-list-block"  >
+  
+        <h2 class="pane-title">
+      Browse by Poet    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="view view-poet-list view-id-poet_list view-display-id-block view-dom-id-dbde8a6d257f80cbb94d9f3f69ba8c1e">
+        
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid cols-4">
+  
+  <tbody>
+          <tr class="row-1 row-first">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/ai"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/ai_0.jpg?itok=e9RyLm5i" width="39" height="50" alt="Ai Portrait" title="Ai Portrait" /></a></div>
+<div>
+<div><a href="/poet/ai">_ Ai</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/sherman-alexie"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/alexie%20photo%20ik%20cover.jpg?itok=kmc5c7P5" width="48" height="50" alt="Sherman Alexie Portrait" title="Sherman Alexie Portrait" /></a></div>
+<div>
+<div><a href="/poet/sherman-alexie">Sherman Alexie</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/r-ammons"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/ammons.jpg?itok=DALwd65l" width="34" height="50" alt="A. R. Ammons Portrait" title="A. R. Ammons Portrait" /></a></div>
+<div>
+<div><a href="/poet/r-ammons">A. R. Ammons</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/john-ashbery"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/jashbery.jpg?itok=VfZW8bC1" width="38" height="50" alt="John Ashbery Portrait" title="John Ashbery Portrait" /></a></div>
+<div>
+<div><a href="/poet/john-ashbery">John Ashbery</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+          <tr class="row-2">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/w-h-auden"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/w-h-auden_0.jpg?itok=QBJ1Aduj" width="50" height="34" alt="W. H. Auden with Manuscript" title="W. H. Auden with Manuscript" /></a></div>
+<div>
+<div><a href="/poet/w-h-auden">W. H. Auden</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/jimmy-baca"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/baca.jpg?itok=ebDG-NxK" width="50" height="37" alt="Jimmy Baca Portrait" title="Jimmy Baca Portrait" /></a></div>
+<div>
+<div><a href="/poet/jimmy-baca">Jimmy Baca</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/amiri-baraka"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/baraka_0.jpg?itok=feg8mbkX" width="31" height="50" alt="Amiri Baraka Portrait" title="Amiri Baraka Portrait" /></a></div>
+<div>
+<div><a href="/poet/amiri-baraka">Amiri Baraka</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/john-beecher"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/beecher.jpg?itok=LU9cXlHZ" width="35" height="50" alt="John Beecher Portrait" title="John Beecher Portrait" /></a></div>
+<div>
+<div><a href="/poet/john-beecher">John Beecher</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+          <tr class="row-3">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/gwendolyn-bennett"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/bennetpainting.jpg?itok=jAN0Zz8X" width="50" height="41" /></a></div>
+<div>
+<div><a href="/poet/gwendolyn-bennett">Gwendolyn Bennett</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/charles-bernstein"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/Bernstein_Charles.jpg?itok=Xgqyzoek" width="50" height="33" alt="Charles Bernstein Portrait" title="Charles Bernstein Portrait" /></a></div>
+<div>
+<div><a href="/poet/charles-bernstein">Charles Bernstein</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/john-berryman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/berryman.jpg?itok=dB_-ysUM" width="39" height="50" alt="John Berryman Portrait" title="John Berryman Portrait" /></a></div>
+<div>
+<div><a href="/poet/john-berryman">John Berryman</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/elizabeth-bishop"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/ebishop.jpg?itok=fM2YuBRc" width="41" height="50" alt="Elizabeth Bishop Portrait" title="Elizabeth Bishop Portrait" /></a></div>
+<div>
+<div><a href="/poet/elizabeth-bishop">Elizabeth Bishop</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+          <tr class="row-4">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/paul-blackburn"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/blackburn.jpg?itok=SOBZXRFP" width="37" height="50" alt="Paul Blackburn Portrait" title="Paul Blackburn Portrait" /></a></div>
+<div>
+<div><a href="/poet/paul-blackburn">Paul Blackburn</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/robert-bly"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/bly.jpg?itok=S4ePi8JU" width="42" height="50" alt="Robert Bly Portrait" title="Robert Bly Portrait" /></a></div>
+<div>
+<div><a href="/poet/robert-bly">Robert Bly</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/louise-bogan"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/bogan.gif?itok=09QMDldr" width="50" height="49" alt="Louise Bogan Portrait" title="Louise Bogan Portrait" /></a></div>
+<div>
+<div><a href="/poet/louise-bogan">Louise Bogan</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/arna-bontemps"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/bontemps.jpg?itok=iAaacIA1" width="40" height="50" alt="Arna Bontemps Portrait" title="Arna Bontemps Portrait" /></a></div>
+<div>
+<div><a href="/poet/arna-bontemps">Arna Bontemps</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+          <tr class="row-5">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/kay-boyle"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/KayBoyle_0.jpg?itok=KhFPFrg6" width="38" height="50" alt="Kay Boyle Portrait" title="Kay Boyle Portrait" /></a></div>
+<div>
+<div><a href="/poet/kay-boyle">Kay Boyle</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/william-bronk"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/bronk.gif?itok=ZBoBOPzB" width="38" height="50" alt="William Bronk Portrait" title="William Bronk Portrait" /></a></div>
+<div>
+<div><a href="/poet/william-bronk">William Bronk</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/gwendolyn-brooks"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/brooks-g.jpg?itok=xqR1nFrg" width="33" height="50" alt="Gwendolyn Brooks Portrait" title="Gwendolyn Brooks Portrait" /></a></div>
+<div>
+<div><a href="/poet/gwendolyn-brooks">Gwendolyn Brooks</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/sterling-brown"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/sbrown.jpg?itok=QZCrfnMa" width="50" height="49" alt="Sterling A. Brown Portrait" title="Sterling A. Brown Portrait" /></a></div>
+<div>
+<div><a href="/poet/sterling-brown">Sterling A. Brown</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+          <tr class="row-6 row-last">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/gladys-casely-hayford-0"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/laluah_0.jpg?itok=cfZCkV-3" width="38" height="50" alt="Gladys Casely-Hayford Portrait" title="Gladys Casely-Hayford Portrait" /></a></div>
+<div>
+<div><a href="/poet/gladys-casely-hayford-0">Gladys Casely-Hayford</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/ana-castillo"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/castillo_0.gif?itok=mNbBREKo" width="48" height="50" alt="Ana Castillo Portrait" title="Ana Castillo Portrait" /></a></div>
+<div>
+<div><a href="/poet/ana-castillo">Ana Castillo</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/lorna-dee-cervantes"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/lorna_cervantes.jpg?itok=bz1l1Oy6" width="39" height="50" alt="Lorna Dee Cervantes portrait" title="Lorna Dee Cervantes portrait" /></a></div>
+<div>
+<div><a href="/poet/lorna-dee-cervantes">Lorna Dee Cervantes</a></div>
+</div>
+<div></div></span>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/poet/marilyn-chin"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/poet/chin.jpg?itok=ynSpyZlO" width="47" height="50" alt="Marilyn Chin Portrait" title="Marilyn Chin Portrait" /></a></div>
+<div>
+<div><a href="/poet/marilyn-chin">Marilyn Chin</a></div>
+</div>
+<div></div></span>  </div>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="/dashboard?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="/dashboard?page=2">3</a></li>
+<li class="pager-item"><a title="Go to page 4" href="/dashboard?page=3">4</a></li>
+<li class="pager-item"><a title="Go to page 5" href="/dashboard?page=4">5</a></li>
+<li class="pager-item"><a title="Go to page 6" href="/dashboard?page=5">6</a></li>
+<li class="pager-item"><a title="Go to page 7" href="/dashboard?page=6">7</a></li>
+<li class="pager-item"><a title="Go to page 8" href="/dashboard?page=7">8</a></li>
+<li class="pager-next"><a title="Go to next page" href="/dashboard?page=1">next ›</a></li>
+<li class="pager-last last"><a title="Go to last page" href="/dashboard?page=7">last »</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+</div>
+    </div>
+  
+  <div class="center-wrapper">
+    <div class="panel-col-first panel-panel">
+      <div class="inside"></div>
+    </div>
+    <div class="panel-col-last panel-panel">
+      <div class="inside"></div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  
+  </div>
+  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-home-top_right panels-flexible-region-last ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-top_right-inside panels-flexible-region-inside-last">
+<div class="panel-pane pane-panels-mini pane-home-top-right"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-display panel-1col clearfix" id="mini-panel-home_top_right">
+  <div class="panel-panel panel-col">
+    <div><div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">Smart Search</h2><div class="ctools-collapsible-content"><div class="smart-search-home">
+<div id="smart-search-wrapper"><form action="/dashboard" method="post" id="maps-smart-search-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-search-text">
+  <label for="edit-search-text">Search Text <span class="form-required" title="This field is required.">*</span></label>
+ <input placeholder="What can we find for you?" type="text" id="edit-search-text" name="search_text" value="" size="60" maxlength="128" class="form-text required form-autocomplete" /><input type="hidden" id="edit-search-text-autocomplete" value="https://www.modernamericanpoetry.org/index.php?q=autocomplete/maps_smart_search/results/" disabled="disabled" class="autocomplete" />
+<div class="description">Clicking a result will bring you directly to the content.</div>
+</div>
+<div class="form-item form-type-select form-item-type">
+  <label for="edit-type">Type </label>
+ <select id="edit-type" name="type" class="form-select"><option value="all" selected="selected">Select a Type</option><optgroup label="Poetry"><option value="group_or_school">School of Poetry</option><option value="poet">Poet</option><option value="poem">Poem</option><option value="criticism">Criticism</option><option value="historical_event">History</option><option value="publication">Publication</option></optgroup><optgroup label="Media"><option value="audio">Audio</option><option value="video">Video</option><option value="image">Image</option></optgroup><optgroup label="Community"><option value="member">Member</option><option value="organization">Organization</option><option value="webinar">Webinar</option><option value="news">News</option><option value="event">Event</option></optgroup><optgroup label="Education"><option value="course">Course</option></optgroup></select>
+<div class="description">Select a type to search.</div>
+</div>
+<input type="submit" id="edit-submit" name="op" value="Smart Search" class="form-submit" /><div class="smart-search-help"><a class="ctools-use-modal ctools-modal-modal-popup-large" href="/loader/help/nojs/26">How do I use this?</a></div><input type="hidden" name="form_build_id" value="form-2-Ow60kk9_cdgeqOK1jrM8MrvmV9NHqsqEYTTx7eSM8" />
+<input type="hidden" name="form_id" value="maps_smart_search_form" />
+</div></form></div></div></div></div><div class="panel-separator"></div><div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">Browse Content</h2><div class="ctools-collapsible-content"><div class="view view-landing-recent-content view-id-landing_recent_content view-display-id-default view-dom-id-0276b1ea6e0f879f910d415e6ee1a68e">
+        
+      <div class="view-filters">
+      <form action="/" method="get" id="views-exposed-form-landing-recent-content-default" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+              <div class="views-exposed-widget views-widget-sort-by">
+        <div class="form-item form-type-select form-item-sort-by">
+  <label for="edit-sort-by">Sort by </label>
+ <select id="edit-sort-by" name="sort_by" class="form-select"><option value="created" selected="selected">Post date</option><option value="changed">Updated date</option><option value="type">Type</option></select>
+</div>
+      </div>
+      <div class="views-exposed-widget views-widget-sort-order">
+        <div class="form-item form-type-select form-item-sort-order">
+  <label for="edit-sort-order">Order </label>
+ <select id="edit-sort-order" name="sort_order" class="form-select"><option value="ASC">Ascending</option><option value="DESC" selected="selected">Descending</option></select>
+</div>
+      </div>
+                <div class="views-exposed-widget views-submit-button">
+      <input type="submit" id="edit-submit-landing-recent-content" name="" value="Apply" class="form-submit" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/gregory-woods-torso">Gregory Woods: On &quot;Torso&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/gregory-woods-torso">Gregory Woods: On &quot;Torso&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/cary-nelson-torso">Cary Nelson: On &quot;Torso&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/cary-nelson-torso">Cary Nelson: On &quot;Torso&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/tj-boynton-rising">T.J. Boynton: On &quot;Up Rising&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even views-row-last">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div><a href="/criticism/ian-w-reid-rising">Ian W. Reid: On &quot;Up Rising&quot;</a></div>
+<div>Criticism</div>
+<br />
+<div></div></span>  </div>  </div>
+    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 711</li>
+<li class="pager-next last"><a title="Go to next page" href="/dashboard?sort_by=created&amp;sort_order=DESC&amp;page=1">next ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div></div></div><div class="panel-separator"></div><div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">Content Cloud</h2><div class="ctools-collapsible-content"><ul class="tag-cloud">
+    <li>
+    <a href="/poem/daddy" class="level6">Daddy</a>  </li>
+    <li>
+    <a href="/poem/waste-land" class="level6">The Waste Land</a>  </li>
+    <li>
+    <a href="/poem/marriage-0" class="level5">Marriage</a>  </li>
+    <li>
+    <a href="/poem/712-because-i-could-not-stop-death" class="level3">712 (Because I could not stop for Death)</a>  </li>
+    <li>
+    <a href="/poem/fish" class="level3">The Fish</a>  </li>
+    <li>
+    <a href="/poem/out-cradle-endlessly-rocking" class="level2">Out of the Cradle Endlessly Rocking</a>  </li>
+    <li>
+    <a href="/poem/stopping-woods-snowy-evening" class="level2">Stopping By Woods On A Snowy Evening</a>  </li>
+    <li>
+    <a href="/poem/fishhouses" class="level1">At the Fishhouses</a>  </li>
+    <li>
+    <a href="/poem/bomb" class="level1">Bomb</a>  </li>
+    <li>
+    <a href="/poem/diving-wreck" class="level1">Diving into the Wreck</a>  </li>
+    <li>
+    <a href="/poem/station-metro" class="level1">In a Station of the Metro</a>  </li>
+    <li>
+    <a href="/poem/lady-lazarus" class="level1">Lady Lazarus</a>  </li>
+  </ul>
+<a href="/tagadelic_taxonomy" class="more">More tags</a></div></div><div class="panel-separator"></div><div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">Keyword Cloud</h2><div class="ctools-collapsible-content"><div class="view view-keyword-tag-cloud- view-id-keyword_tag_cloud_ view-display-id-default view-dom-id-83520e3cf1d8838176b3e17b6ef49d70">
+        
+  
+  
+      <div class="view-content">
+      <div class="list-class">    <ul class="tag-cloud">          <li class="  level6">  
+          <a href="/category/tags/irony" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Irony</a>  </li>
+          <li class="  level6">  
+          <a href="/category/tags/stings" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Stings</a>  </li>
+          <li class="  level6">  
+          <a href="/category/tags/death" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Death</a>  </li>
+          <li class="  level4">  
+          <a href="/category/tags/love" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">love</a>  </li>
+          <li class="  level4">  
+          <a href="/category/tags/nature" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Nature</a>  </li>
+          <li class="  level4">  
+          <a href="/category/tags/wintering" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Wintering</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/identity" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Identity</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/tone" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Tone</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/culture" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">culture</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/loss" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">loss</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/imagery" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">imagery</a>  </li>
+          <li class="  level3">  
+          <a href="/category/tags/tulips" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Tulips</a>  </li>
+          <li class="  level2">  
+          <a href="/category/tags/religion" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Religion</a>  </li>
+          <li class="  level2">  
+          <a href="/category/tags/feminism" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">feminism</a>  </li>
+          <li class="  level2">  
+          <a href="/category/tags/history" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">history</a>  </li>
+          <li class="  level2">  
+          <a href="/category/tags/sonnet" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Sonnet</a>  </li>
+          <li class="  level2">  
+          <a href="/category/tags/imagination" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">imagination</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/fear" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">fear</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/sarcasm" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Sarcasm</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/imagism" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Imagism</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/black-history" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Black History</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/rhythm" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Rhythm</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/uncertainty" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Uncertainty</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/humor" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">humor</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/self" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">self</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/ford" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Ford</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/villanelle" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Villanelle</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/boston" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Boston</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/isolation" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">isolation</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/juxtaposition" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Juxtaposition</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/power" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Power</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/form" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">form</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/myth" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">myth</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/symbolism" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">symbolism</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/haiku" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">haiku</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/diction" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">diction</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/historical" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Historical</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/violence" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">violence</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/gender" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">gender</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/winter" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">winter</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/life" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Life</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/world-war-ii" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">World War II</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/new-york" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">New York</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/narrative" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Narrative</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/fish" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">fish</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/spiritual" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Spiritual</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/labor" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">labor</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/mythology" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">mythology</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/sacrifice" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">sacrifice</a>  </li>
+          <li class="  level1">  
+          <a href="/category/tags/struggle" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Struggle</a>  </li>
+      </ul></div>    </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="/dashboard?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="/dashboard?page=2">3</a></li>
+<li class="pager-item"><a title="Go to page 4" href="/dashboard?page=3">4</a></li>
+<li class="pager-item"><a title="Go to page 5" href="/dashboard?page=4">5</a></li>
+<li class="pager-item"><a title="Go to page 6" href="/dashboard?page=5">6</a></li>
+<li class="pager-item"><a title="Go to page 7" href="/dashboard?page=6">7</a></li>
+<li class="pager-item"><a title="Go to page 8" href="/dashboard?page=7">8</a></li>
+<li class="pager-item"><a title="Go to page 9" href="/dashboard?page=8">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a title="Go to next page" href="/dashboard?page=1">next ›</a></li>
+<li class="pager-last last"><a title="Go to last page" href="/dashboard?page=22">last »</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div></div></div><div class="panel-separator"></div><div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">Login</h2><div class="ctools-collapsible-content"><form action="/dashboard?destination=dashboard" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+ <input tabindex="1" type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required" />
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input tabindex="1" type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required" />
+</div>
+<div class="form-item form-type-checkbox form-item-remember-me">
+ <input tabindex="1" type="checkbox" id="edit-remember-me" name="remember_me" value="1" checked="checked" class="form-checkbox" />  <label class="option" for="edit-remember-me">Remember me </label>
+
+</div>
+<div class="item-list"><ul><li class="first last"><a href="/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-ahZL--DRtYoIos-PRN7p13og8A4SYQH5r1-FjQDtzU0" />
+<input type="hidden" name="form_id" value="user_login_block" />
+<fieldset class="captcha form-wrapper"><legend><span class="fieldset-legend">CAPTCHA</span></legend><div class="fieldset-wrapper"><div class="fieldset-description">This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.</div><input type="hidden" name="captcha_sid" value="7771692" />
+<input type="hidden" name="captcha_token" value="ce6d8d7597d7208b0da89905a5053d7c" />
+<img typeof="foaf:Image" src="/image_captcha?sid=7771692&amp;amp;ts=1615989250" width="180" height="60" alt="Image CAPTCHA" title="Image CAPTCHA" /><div class="form-item form-type-textfield form-item-captcha-response">
+  <label for="edit-captcha-response">What code is in the image? <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-captcha-response" name="captcha_response" value="" size="15" maxlength="128" class="form-text required" />
+<div class="description">Enter the characters shown in the image.</div>
+</div>
+</div></fieldset>
+<div class="form-actions form-wrapper" id="edit-actions"><input tabindex="1" type="submit" id="edit-submit" name="op" value="Log in" class="form-submit" /></div></div></form></div></div></div>
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="panels-flexible-row panels-flexible-row-home-main-row clearfix">
+  <div class="inside panels-flexible-row-inside panels-flexible-row-home-main-row-inside clearfix">
+<div class="panels-flexible-region panels-flexible-region-home-center panels-flexible-region-first ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-center-inside panels-flexible-region-inside-first">
+<div class="ctools-collapsible-container ctools-collapsed"><h2 class="pane-title ctools-collapsible-handle">My Activity</h2><div class="ctools-collapsible-content"><div class="panel-pane pane-views pane-landing-activity-snapshot"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-landing-activity-snapshot view-id-landing_activity_snapshot view-display-id-default view-dom-id-2e094bebf18c55a3db7b845b621d7195 heartbeat-stream heartbeat-messages-wrapper heartbeat-stream-viewsactivity">
+            <div class="view-header">
+      <div class="post-content"><a href="/network/activity">Full Activity Stream</a> &bull; <a href="/user/0">My Profile</a></div>    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div>
+<a href="/member/bartholomew-brinkman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/pictures/picture-3-1367880678.jpg?itok=enO12r6J" alt="" /></a>
+</div>
+<div>
+<div><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a> has added <a href="/node/859">MAPS Presentation at NEMLA, 2013</a>_type <a href="/node/859">MAPS...</a></div>
+<div><em class="placeholder">7 years 10 months</em> ago</div>
+</div>
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div>
+<a href="/member/bartholomew-brinkman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/pictures/picture-3-1367880678.jpg?itok=enO12r6J" alt="" /></a>
+</div>
+<div>
+<div><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a> became member of <a href="/organization/framingham-state-university">Framingham State University...</a></div>
+<div><em class="placeholder">7 years 10 months</em> ago</div>
+</div>
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div>
+<a href="/member/bartholomew-brinkman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/pictures/picture-3-1367880678.jpg?itok=enO12r6J" alt="" /></a>
+</div>
+<div>
+<div><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a> became member of <a href="/organization/modern-american-poetry">Modern American Poetry</a>.</div>
+<div><em class="placeholder">7 years 10 months</em> ago</div>
+</div>
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div>
+<a href="/member/bartholomew-brinkman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/pictures/picture-3-1367880678.jpg?itok=enO12r6J" alt="" /></a>
+</div>
+<div>
+<div><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a> has updated <a href="/poet/langston-hughes">Langston Hughes</a>_type "...</div>
+<div><em class="placeholder">7 years 10 months</em> ago</div>
+</div>
+<div></div></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div>
+<a href="/member/bartholomew-brinkman"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/activity_avatar/public/pictures/picture-3-1367880678.jpg?itok=enO12r6J" alt="" /></a>
+</div>
+<div>
+<div><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a> has added <a href="/node/2701">James Dougherty on One's Self I Sing from Walt Whitman and t...</a></div>
+<div><em class="placeholder">7 years 9 months</em> ago</div>
+</div>
+<div></div></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+</div></div>  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-home-bottom_right panels-flexible-region-last ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-bottom_right-inside panels-flexible-region-inside-last">
+  </div>
+</div>
+  </div>
+</div>
+<div class="panels-flexible-row panels-flexible-row-home-2 panels-flexible-row-last clearfix ">
+  <div class="inside panels-flexible-row-inside panels-flexible-row-home-2-inside panels-flexible-row-inside-last clearfix">
+<div class="panels-flexible-region panels-flexible-region-home-bottom_left panels-flexible-region-first ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-bottom_left-inside panels-flexible-region-inside-first">
+  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-home-far_bottom_right panels-flexible-region-last ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-home-far_bottom_right-inside panels-flexible-region-inside-last">
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+</div>
+ <!-- /.region -->
+  </section> <!-- /#main -->
+  
+  
+    <div class="clear-container"></div>
+</div> <!-- /#main-content-container -->
+</div>
+<div id="footer-container">
+  <footer id="footer" role="contentinfo" class="clearfix">
+    <div class="region region-footer">
+  <div id="block-block-10" class="block block-block">
+
+    
+  <div class="content">
+    <div class="panel-flexible panels-flexible-footer clearfix" id="mini-panel-footer">
+<div class="panel-flexible-inside panels-flexible-footer-inside">
+<div class="panels-flexible-region panels-flexible-region-footer-far_left panels-flexible-region-first ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-footer-far_left-inside panels-flexible-region-inside-first">
+<div class="panel-pane pane-custom pane-4"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="footer-logo">
+<a href="/"><img src="/sites/all/themes/maps_theme/images/logo_dark.png" width="221" height="22" title="Modern American Poetry" border="0"></a>
+</div>
+<div class="footer-about-us">
+The Modern American Poetry Site is a comprehensive learning environment and scholarly forum for the study of modern and contemporary American poetry. MAPS welcomes submissions of original essays and teaching materials related to MAPS poets and the Anthology of Modern American Poetry. We are also happy to take questions and suggestions for future materials.
+ <a href="/about">Read More</a>
+</div>  </div>
+
+  
+  </div>
+  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-footer-center">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-footer-center-inside">
+<div class="panel-pane pane-custom pane-3"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="footer-title">Directors</div>
+<div class="footer-contact">
+<font style="color: #FFFFFF;"><a href="/member/bartholomew-brinkman">Bartholomew Brinkman</a></font> (Director)<br>
+Framingham State University
+<br><br>
+<font style="color: #FFFFFF;"><a href="/member/cary-nelson">Cary Nelson</a></font> (Founding Director)<br>
+University of Illinois at Urbana-Champaign
+</div>  </div>
+
+  
+  </div>
+  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-footer-far_right ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-footer-far_right-inside">
+<div class="panel-pane pane-custom pane-5"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="footer-title">Contact Details</div>
+<div class="footer-contact">
+<a href="mailto:support@modernamericanpoetry.org">support@<br>modernamericanpoetry.org</a>
+<br><br>
+<b>Modern American Poetry</b><br>
+100 State St<br>
+Framingham, MA 01701, USA
+<br><br>
+Or visit our <a href="/about/contact">contact</a> section.
+</div>  </div>
+
+  
+  </div>
+  </div>
+</div>
+<div class="panels-flexible-region panels-flexible-region-footer-far_right_2 panels-flexible-region-last ">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-footer-far_right_2-inside panels-flexible-region-inside-last">
+<div class="panel-pane pane-custom pane-6 footer-pane-images"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="footer-title">Image Snapshot</div>
+<div class="footer-snapshot">
+<div class="view view-footer-image-snapshot view-id-footer_image_snapshot view-display-id-block view-dom-id-9f2d7c185d05fdbcdf885998e5f3a8b6">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/ashberys-your-name-here-poems"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/your%20name%20here.jpg?itok=aE0ywlN2" width="45" height="51" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/snodgrass-1978-0"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/snodgrass%201978%20arts%20reunion%202_0.jpg?itok=0qEABh9Q" width="45" height="51" alt="http://www.lib.odu.edu/litfest/photos/1978/1978photos.html" /></a></div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/eliots-homage-john-dryden-three-essays-poetry-seventeenth-century"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/homage%20to%20john%20dryden.jpg?itok=Qc94Wx18" width="45" height="51" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/oharas-meditations-emergency"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/meditations%20in%20an%20emergency.jpg?itok=qpc1SS2O" width="45" height="51" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/self-portrait-early-1950s"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/plath_selfportrait_2.jpg?itok=bQ4TJSdm" width="45" height="51" alt="A Self-Portrait of Sylvia Plath from the early 1950&#039;s" title="Self-portrait, early 1950&#039;s" /></a></div>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/sara-teasdale-sitting-portrait"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/sara-teasdale-1-sized.jpg?itok=2WHtKypi" width="45" height="51" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/ashberys-some-trees"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/some%20trees.jpg?itok=fnU3eoV1" width="45" height="51" alt="" /></a></div>  </div>  </div>
+  <div class="views-row views-row-8 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-image-file">        <div class="field-content"><a href="/image/barbara-guest-landscape-portrait"><img typeof="foaf:Image" src="https://www.modernamericanpoetry.org/sites/default/files/styles/avatar_cropped/public/guest-dennis-70s.jpg?itok=_3PxBxr7" width="45" height="51" alt="Barbara Guest Landscape Portrait" title="Barbara Guest Landscape Portrait" /></a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>  </div>
+
+  
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+</a>Copyright 2021 
+<a href="http://www.framingham.edu" target="_blank"><img src="/sites/all/images/FSU_logo.png" border="0" title="Visit Framingham State University" width="32" height="37"></a>the Department of English, Framingham State University
+
+</div>
+<div class="footer-terms">
+<a href="/terms">Terms & Conditions</a> &bull; <a href="/privacy">Privacy Policy</a>
+</div>
+<div style="clear: both; height: 0px;"></div>  </div>
+</div>
+</div>
+ <!-- /.region -->
+  </footer> <!-- /#footer -->
+  </div>
+</div> <!-- /#container -->  <script type="text/javascript" src="https://www.modernamericanpoetry.org/sites/default/files/js/js_MFRwytnsY_SUteLtdh41nhngLbZ5wjSgBe9cauZpbG4.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-ea8907107943d56cb94","applicationID":"427899967","transactionName":"blNUZ0BUV0FRBxdfC1cZd1BGXFZcHxQCUQFmW1ddU1JcQG8UAlEBZlNOVlFATVc=","queueTime":0,"applicationTime":1199,"atts":"QhRXEQhORE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
